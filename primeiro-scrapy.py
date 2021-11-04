@@ -29,19 +29,16 @@ class inovaSpider(scrapy.Spider):
 
         #@Dev - Ponto de melhoria: lógica do local do leilão, necessário validação com if
         #local_leilao = response.css('td.border-0::text')[1].get()
-
+        
         leilao = response.css('td.border-0::text')[1].get()
         leiloeiro = response.css('td.border-0::text')[2].get()
         id = response.css('td.border-0::text')[3].get()
-
         abertura_primeiro = response.css('td.text-center.text-sm-left::text')[0].get()
         fechamento_primeiro = response.css('td.text-center.text-sm-left::text')[1].get()
         valor_primeiro = response.css('td.p-2.align-middle::text')[2].get()
-
         abertura_segundo = response.css('td.text-center.text-sm-left::text')[2].get()
         fechamento_segundo = response.css('td.text-center.text-sm-left::text')[3].get()
         valor_segundo = response.css('td.p-2.align-middle::text')[5].get()
-        
         incremento = response.css('dd.d-inline-block.mb-0::text')[0].get()
         avaliacao = response.css('dd.d-inline-block.mb-0::text')[1].get()
         visitas = response.css('dd.d-inline-block.mb-0::text')[2].get()
